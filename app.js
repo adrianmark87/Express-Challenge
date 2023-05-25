@@ -24,18 +24,23 @@ app.post("/api/movies", validateMovie,movieHandlers.postMovie);
 
 app.put("/api/movies/:id", validateMovie,movieHandlers.updateMovie);
 
+app.delete("/api/movies/:id", movieHandlers.deleteMovie);
+
 
 
 const userHandlers = require("./userHandlers");
 
 const { validateUser } = require("./validators.js");
 
+app.get("/api/users", userHandlers.getUsers);
+app.get("/api/users/:id", userHandlers.getUserById);
+
 app.post("/api/users", validateUser, userHandlers.postUser);
 
 app.put("/api/users/:id", validateUser, userHandlers.updateUser);
 
-app.get("/api/users", userHandlers.getUsers);
-app.get("/api/users/:id", userHandlers.getUserById);
+app.delete("/api/users/:id", userHandlers.deleteUser);
+
 
 
 
