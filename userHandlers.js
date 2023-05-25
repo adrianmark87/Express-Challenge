@@ -27,18 +27,6 @@ const users = [
 
 const database = require("./database");
 
-// const getUsers = (req, res) => {
-//   database
-//     .query("select * from users")
-//     .then(([users]) => {
-//       res.json(users);
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.status(500).send("Error retrieving data from database");
-//     });
-// };
-
 const getUsers= (req, res) => {
   const initialSql = "select * from users";
   const where = [];
